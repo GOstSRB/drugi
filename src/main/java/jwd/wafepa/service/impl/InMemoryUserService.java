@@ -67,9 +67,12 @@ public class InMemoryUserService implements UserService{
 		}
 	}
 
+	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public List<User> findByFirstName(String firstName) {
-		// TODO Auto-generated method stub
+		if (users.containsValue(firstName)) {
+		return new ArrayList<User>(users.values());
+		}
 		return null;
 	}
 

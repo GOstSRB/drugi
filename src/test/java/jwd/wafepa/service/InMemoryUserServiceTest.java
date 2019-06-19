@@ -54,4 +54,13 @@ public void testSaveAll () {
 	Assert.assertEquals(7, results.size());	
 	
 }
+
+@Test
+public void remove() {
+	userService.delete(1);
+	List<User> result = userService.findAll();
+	Assert.assertEquals(3, result.size());
+}
+
+
 }
